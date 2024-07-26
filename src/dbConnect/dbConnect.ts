@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const dbConnect = async() =>{
     try{
-        mongoose.connect(process.env.MONGO_URL!)
+        mongoose.connect(process.env.MONGO_URL!) // ! denotes this url wont be undefined
         //The connection object is obtained from mongoose.connection. This object is used to listen for connection events.
         const connection = mongoose.connection 
 
