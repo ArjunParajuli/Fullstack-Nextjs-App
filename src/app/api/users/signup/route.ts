@@ -6,9 +6,9 @@ import { sendMail } from "@/utils/mailer";
 
 dbConnect();
 
-export const POST = async(request: NextRequest, response: NextResponse) =>{
+export const POST = async(request: NextRequest, response: NextResponse) => {
     try{
-        const reqBody = await request.json();
+        const reqBody = await request.json(); // await is imp here bcoz this is nextjs
         const {username, email, password} = reqBody;
 
         const emailCheck = await User.findOne({email}) 
